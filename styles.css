@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+#main{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+#sorting-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: green; 
+}
+
+.sections{
+    scroll-snap-align: start;
+}
