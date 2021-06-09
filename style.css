@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+body{
+    font-family: "Roboto Slab", Arial;
+    background-color: #eeeeee;
+    overflow: hidden;
+}
+
+#container{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    color: #222831;
+    font-size: 1.7em;
+}
+
+h3{
+    text-align: center;
+    font-size: .7em;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin: 2em;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color: white;
+    background-color:#393e46;
+    text-align: center;
+    transition: all 0.2s;
+    outline: none;
+}
+.buttons:hover{
+    background-color:#222831;
+    opacity: .8;
+    transform: scale(.95);
+    border-radius: 0%;
+    transition: 1000ms ease-in;
+}
+@media all and (max-width:30em){
+ .buttons{
+    display:block;
+    margin:0.2em auto;
+ }
+}
+
+.slider{
+    --webkit-appearance: none;
+    width: 100%;
+    height: 20px;
+    background: red;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider:hover{
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}

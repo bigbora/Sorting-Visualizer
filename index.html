@@ -1,17 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Visualizer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bubble Sort Visualizer</title>
+    <!-- Connect CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+  <body>
+      <h1 class="animate__animated animate__backInDown"> Bubble Sort </h1>
+      <h3>A Project by Ezra Mengesha</h3>
+      <hr/>
+                <!-- CREATE CANVAS AND CONTROLS -->
+      <canvas id="myChart" width = "60vw" height = "22vh"></canvas>
+        <div class="controls">
+            <input type="button" class="buttons" value="Sort Array" onclick="sortArray()">
+            <div class="slideContainer">
+                <input type="range" min = "20" max="100" value="1" id="myRange" class="slider" step="1">
+            </div>
+            <input type="button" class="buttons" value="Generate New Array" onclick="genNew()">
+        </div>
+                    <!-- CONNECT CHART.JS -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+      <script src="script.js"></script>
+    <script>
+                // SET UP CHART, ANIMATIONS, AND BUTTONS
+          var ctx = document.getElementById("myChart").getContext("2d");
+          var myChart = new Chart(ctx, {
+              type: "bar",
+              data: {
+                  labels: array,
+                  datasets: [{
+                      borderRadius: 2,
+                      data: array,
+                      backgroundColor: "#00adb5",
+                      borderWidth: 2
+                  }]
+              },
+              options: {
+                  animation: {
+                      duration: 1000,
+                      easing: 'easeOut',
+                      delay: 250
+                  },
+                  plugins:{
+                    legend: {
+                        display: false
+                    }
+                  }
+              }
+          });
 
-<body>
-        <div class="sections"id="main"></div>
-        <div class="sections"id="sorting-container"></div>
-    </div>
-</body>
+          function sortArray(){
+              myChart.data.datasets[0].data = sortedArray;
+              myChart.data.labels = sortedArray;
+              myChart.update();
+          }
+          
+          function genNew(){
+              generateArray();
+              bubbleSort(array);
+              myChart.data.datasets[0].data = array;
+              myChart.data.labels = array;
+              myChart.update();
+
+
+          }
+      </script>
+  </body>
 </html>
