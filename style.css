@@ -3,7 +3,7 @@
 body{
     font-family: "Roboto Slab", Arial;
     background-color: #eeeeee;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #container{
